@@ -1,3 +1,6 @@
+<style>
+html {font-family: Helvetica, sans-serif; font-size: 30px; font-weight: bolder;}
+</style>
 <script type="text/javascript"> 
 
 
@@ -29,6 +32,29 @@ saysomething = function ( whattosay) {
 
 document.write(saysomething(something));
 console.log(something);
+</script>
 
+<br/>
+<br/>
+
+<script>
+
+//JS Arguements explained http://blog.victorquinn.com/javascript-arguments-explained
+
+var hello_name = function(first) {
+	return "Hello, " + arguments[0] + " " + arguments[1] + " " + arguments[2];
+};
+
+document.write(hello_name("Victor", "James", "Quinn"));
+
+var uppercase_all_names = function() {
+	var upper = [];
+	for(i = 0; i<arguments.length; i++) {
+		upper[i] = arguments[i].charAt(0).toUpperCase() + arguments[i].substr(1);
+	}
+	return upper;
+};
+
+document.write("<br/><br/>" + uppercase_all_names("victor", "james", "quinn"));
 
 </script>
