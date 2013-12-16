@@ -1,18 +1,89 @@
 <script type="text/javascript">
-	
+        
 var object = {firstName: "Craig", favoriteLinux: "Ubuntu"};
 
 
 
-document.write(object.firstName);
+//document.write(object.firstName);
 
 
+var person = {name: "The Dude"};
+var anotherPerson = person;
+var person = {name: "Donnie"};
+anotherPerson.name = "Someone";
+
+//document.write(anotherPerson.name); 
+//document.write(person.name);
+
+var myBeer = {};
+
+var mango = {
+	color: "yellow",
+	shape: "round",
+	sweetness: 8, 
+	howSweetAmI: function() {
+		console.log("very sweet!!!");
+
+	}
+}
+
+console.log(mango.howSweetAmI());
+
+function Fruit (theColor, theSweetness, theFruitName, theNativeToLand) {
+	this.color = theColor;
+	this.sweetness = theSweetness;
+	this.fruitName = theFruitName;
+	this.nativeToLand = theNativeToLand;
+
+	this.showName = function () {
+		console.log("This is a " + this.fruitName);
+	}
+	this.nativeTo = function () {
+		this.nativeToLand.forEach(function (eachCountry) {
+			console.lgo("Grown in:" + eachCountry);
+		});
+	}
+}
+
+var apple = new Fruit("Green", 7, "Apple", ["America"]);
+//apple.//showName();
 
 
+function Plant() {
+	this.country = "USA";
+	this.isOrganic = true;
+}
+
+Plant.prototype.showNameAndColor = function() {
+	console.log("I am a " + this.name + " and my color is " + this.color + ". Do I eat enough of this veggie, you ask?" + this.doIeat);
+}
+
+Plant.prototype.amIOrganic = function() {
+	if (this.isOrganic)
+		console.log("Im organic!!!");
+}
+
+function Fruit (fruitName, fruitColor, doIEatThis) {
+	this.name = fruitName;
+	this.color = fruitColor;
+	this.doIeat = doIEatThis;
+}
+
+Fruit.prototype = new Plant();
+var aBanana = new Fruit ("Banana", "Yellow");
+
+function Veggie (fruitName, fruitColor, doIEatThis) {
+	this.name = fruitName;
+	this.color = fruitColor;
+	this.doIeat = doIEatThis;
+}
+
+Veggie.prototype = new Plant();
+var Lettuce = new Veggie ("Lettuce", "Green", "No, not enough, spinach FTW")
 
 
-
-
+console.log(Lettuce.isOrganic);
+console.log(Lettuce.showNameAndColor());
 
 
 </script>
