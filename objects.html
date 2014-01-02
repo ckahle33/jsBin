@@ -28,7 +28,7 @@ var mango = {
 	}
 }
 
-console.log(mango.howSweetAmI());
+//console.log(mango.howSweetAmI());
 
 function Fruit (theColor, theSweetness, theFruitName, theNativeToLand) {
 	this.color = theColor;
@@ -83,8 +83,45 @@ Veggie.prototype = new Plant();
 var Lettuce = new Veggie ("Lettuce", "Green", "No, not enough, spinach FTW")
 
 
-console.log(Lettuce.isOrganic);
-console.log(Lettuce.showNameAndColor());
+//console.log(Lettuce.isOrganic);
+//console.log(Lettuce.showNameAndColor());
+
+
+// CALLBACK FUNCTIONS
+
+var friends  =["Blaze", "Bridog", "Har"];
+
+friends.forEach(function (eachName, index){
+	document.write(index + 1 +". " +" " + eachName + "<br>");
+
+});
+/*
+function showName (firstName, lastName) {
+	var nameIntro = "Your name is ";
+	function makeFullName (){
+		return nameIntro + firstName + " " +lastName;
+	}
+		return makeFullName();
+}*/
+
+//var taName = showName("trey");
+//taName ("anastasio");
+
+function celebrityName (firstName) {
+	var nameIntro= "THis celebrity is ";
+
+	function lastName(theLastName) {
+		return nameIntro + firstName + "  " + theLastName;
+	}
+		return lastName;
+}
+var taName = celebrityName ("trey");
+taName ("anastasio");
+
+
+
+
+
 
 
 </script>
